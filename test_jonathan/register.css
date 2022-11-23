@@ -1,0 +1,122 @@
+html, body {
+    background-color: #0f0f0f;
+    margin: 0;
+    height: 100%;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    background: #0f0f0f;
+    color: white;
+}
+
+.inner-header {
+    height: 30vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrapper {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'cursive';
+    font-variant: small-caps;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 48px;
+    position: relative
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-cadastro {
+    display: none;
+    transition: 1s;
+}
+
+.cadastro {
+    width: 350px;
+    box-shadow: 0 0 20px 2px black;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.login {
+    width: 350px;
+    box-shadow: 0 0 20px 2px black;
+    border-radius: 5px;
+    margin: 20px;
+    padding-top: 15px;
+}
+
+/* Formulários*/
+.texto-cadastro {
+    margin-top: 15px;
+}
+
+.inputs {
+    width: 15em;
+    height: 1.8em;
+    border-radius: 2px;
+    margin: 5px;
+    padding-left: 10px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.inputs:hover {
+    transition: 1;
+    border: 1px solid white;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 50;
+    margin-bottom: 15px;
+    padding: 0.7em 1.4em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Cursive', sans-serif;
+    font-weight: 50;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.btn:hover {
+    background-color: whitesmoke;
+    color: black;
+    transition: 0.3s;
+}
+
+.ir-login {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.ir-login:hover {
+    color: grey;
+    transition: 0.5s;
+}
