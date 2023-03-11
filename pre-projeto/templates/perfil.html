@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <title>Project Flag: Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil_style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="position-absolute m-1">
+            <a href="/render_menu"><img class="botao-voltar" src="../static/img/botao_voltar.png" alt="voltar"></a>
+        </div>
+            <div class="flex">
+                <div class="circle rounded-circle">
+                    <img src="{{ url_for('static', filename='img/olho.jpg') }}">
+                </div>
+                <div class="name-box">
+                    <h1 class="name-text" id='nickname'></h1>
+                </div>
+                <div class="buttons-box">
+                    <a href="/update"><button class="button-config">Configurações</button></a>
+                    <a href="/" id="sair"><button class="button-sair">Sair</button></a>
+                </div>
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+<div class="flex-table">
+    <div class="table">
+        <table class="table">
+            <tr>
+              <th class="line-table-main">Pontuação geral</th>
+              <th class="line-table-main">Pontuação em criptografia</th>
+              <th class="line-table-main">Pontuação em estegnografia</th>
+              <th class="line-table-main">Pontuação em charadas</th>
+            </tr>
+            <tr>
+              <td class="line-table-item" id="pont_geral"></td>
+              <td class="line-table-item" id="pont_cript"></td>
+              <td class="line-table-item" id="pont_estg"></td>
+              <td class="line-table-item" id="pont_char"></td>
+            </tr>
+          </table>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<script>
+var user = sessionStorage.getItem('email');
+    log = JSON.stringify({email:user});
+    $.ajax({
+        url: `https://projectflag.pythonanywhere.com/get_user`,
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: log,
+        success: consulta
+    });
+    function consulta(resposta){
+        var pont_ger = resposta.ger;
+        var pont_est = resposta.estn;
+        var pont_char = resposta.char;
+        var pont_cript = resposta.cript;
+        $('#pont_geral').append(pont_ger);
+        $('#pont_estg').append(pont_est);
+        $('#pont_char').append(pont_char);
+        $('#pont_cript').append(pont_cript);
+    };
+</script>
+<script>
+    sessionStorage.getItem('nome');
+    sessionStorage.getItem('email');
+    $('#nickname').append(sessionStorage.getItem('nome'));
+    $('#email').append(sessionStorage.getItem('email'));
+    $(document).on('click', '#sair', function(){
+    sessionStorage.clear();
+    window.location.assign('/');
+    });
+</script>
+</body>
+</html>
