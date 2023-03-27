@@ -1,0 +1,5 @@
+# Ignorar testes
+*.testes
+
+# Ignorar estrutura
+*.estrutura

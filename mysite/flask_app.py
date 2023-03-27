@@ -344,4 +344,4 @@ def get_user():
     resposta.headers.add('Access-Control-Allow-Origin', '*')
     return resposta
 
-
+app.run(debug=True)
