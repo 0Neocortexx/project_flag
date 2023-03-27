@@ -1,5 +1,8 @@
+# Ignorar arquivos de backup do VScode
+.vscode/*
+
 # Ignorar testes
-/testes
+testes/
 
 # Ignorar estrutura
-/estrutura
+estrutura/
