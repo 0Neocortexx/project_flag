@@ -1,8 +1,0 @@
-Mysite -|
-	|-static -|-css
-		  |-img
-		  |-js 
-	|-templates
-	|-flask_app.py
-	|-model.py
-	|-project_flag.db
