@@ -20,3 +20,12 @@
     <li>SQLAlchemy</li>
     <li>jQuery</li>
 </ul>
+<hr>
+<p>Pips requested:</p>
+<ul>
+    <li>Flask</li>
+    <li>Flask_cors</li>
+    <li><flask_sqlalchemy/li>
+    <li>bcrypt</li>
+    <li>timedelta</li>
+</ul>
