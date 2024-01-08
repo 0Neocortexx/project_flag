@@ -1,5 +1,5 @@
 <h1 align='center'>Project Flag</h1>
-<p>web game developed as a team in the IT technical course at the federal institute with challenges involving computer security and logical reasoning!</p>
+<p>Web game developed as a team in the IT technical course at the federal institute with challenges involving computer security and logical reasoning!</p>
 <hr>
 <p>Collaborators</p>
 <ul>
